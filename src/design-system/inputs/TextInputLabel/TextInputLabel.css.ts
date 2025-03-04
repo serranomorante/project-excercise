@@ -1,4 +1,4 @@
-import { ComplexStyleRule, globalStyle } from "@vanilla-extract/css";
+import { ComplexStyleRule, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
 const textInputLabelVariantsSize = {
@@ -22,6 +22,22 @@ export const textInputLabelVariants = recipe({
   }
 })
 
-globalStyle(`${textInputLabelVariants.classNames.base} > span`, {
-  marginRight: 5
+export const labelTextMain = style({
+  selectors: {
+    [`${textInputLabelVariants.classNames.base} &`]: {
+      marginRight: 5
+    },
+    [`${textInputLabelVariants.classNames.variants.size.xs} &`]: {
+      fontSize: 12
+    },
+    [`${textInputLabelVariants.classNames.variants.size.sm} &`]: {
+      fontSize: 14
+    },
+    [`${textInputLabelVariants.classNames.variants.size.md} &`]: {
+      fontSize: 14
+    },
+    [`${textInputLabelVariants.classNames.variants.size.lg} &`]: {
+      fontSize: 18
+    }
+  }
 })
