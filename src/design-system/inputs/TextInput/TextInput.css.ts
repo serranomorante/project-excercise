@@ -1,4 +1,4 @@
-import { ComplexStyleRule, globalStyle, style } from "@vanilla-extract/css";
+import { ComplexStyleRule, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
 const textInputSize = {

@@ -6,7 +6,6 @@ import { requestLoan } from "@/core/loans/loan.actions";
 import { RequestLoanFormContent } from "./RequestLoanFormContent";
 import { IRequestLoanFormFieldValues } from "./RequestLoanForm.types";
 import { useNotificationContext } from "@/components/client/info/NotificationContext";
-import { useRequestLoanSuccessModal } from "../RequestLoanSuccessModal/RequestLoanSuccessModal.hooks";
 import { Box } from '@/design-system/layout';
 import { Text } from '@/design-system/atoms';
 

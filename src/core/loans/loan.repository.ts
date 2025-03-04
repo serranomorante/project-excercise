@@ -1,4 +1,4 @@
-import { APIResponse, LOANS_SERVICE_API, adaptUnknownErrors, hasProperty } from "@/common";
+import { APIResponse, LOANS_SERVICE_API, adaptUnknownErrors } from "@/common";
 import { ILoanDetails, IRequestLoanArgs } from "./loan.types";
 
 class LoanRepository {
