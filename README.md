@@ -95,6 +95,6 @@ Esto asegura no sólo las buenas prácticas sino también la escalabilidad y el 
 Aspectos que intencionalmente fueron dejados de lado para apresurar el desarrollo:
 
 - Internacionalización
-- Login
+- Application theme
 - Componentes de autocompletado como selectores o pickers
 - ESLint
