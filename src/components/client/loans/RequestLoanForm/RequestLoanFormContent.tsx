@@ -13,11 +13,13 @@ interface IRequestLoanFormContentProps {
   initialValues?: Partial<IRequestLoanFormFieldValues>
 }
 
-export function RequestLoanFormContent({ initialValues }: IRequestLoanFormContentProps) {
+export function RequestLoanFormContent({ initialValues = {} }: IRequestLoanFormContentProps) {
   const { pending: isPending } = useFormStatus()
+  const { id, name, surname, age, check, email, loan_amount, loan_date, loan_weeks, phone } = initialValues
 
   return (
     <div className={main}>
+      <TextInput type='hidden' name="id" defaultValue={id} />
       <TextInputLabel label="Nombre">
         <TextInput
           id="name"
@@ -26,7 +28,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           fullWidth
           minLength={3}
           required
-          defaultValue={initialValues?.name} />
+          defaultValue={name} />
       </TextInputLabel>
 
       <TextInputLabel label="Apellidos">
@@ -37,7 +39,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           fullWidth
           required
           minLength={3}
-          defaultValue={initialValues?.surname} />
+          defaultValue={surname} />
       </TextInputLabel>
 
       <TextInputLabel label="Email">
@@ -50,7 +52,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           minLength={3}
           required
           placeholder="Ingrese su correo"
-          defaultValue={initialValues?.email} />
+          defaultValue={email} />
       </TextInputLabel>
 
       <TextInputLabel label="Teléfono">
@@ -62,7 +64,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           minLength={3}
           required
           placeholder="Ingrese su teléfono"
-          defaultValue={initialValues?.phone} />
+          defaultValue={phone} />
       </TextInputLabel>
 
       <TextInputLabel label="Edad">
@@ -75,7 +77,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           min={16}
           required
           placeholder="Ingrese su edad"
-          defaultValue={initialValues?.age} />
+          defaultValue={age} />
       </TextInputLabel>
 
       <TextInputLabel label="Importe Préstamo">
@@ -90,7 +92,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           placeholder="Ingrese el monto"
           required
           InputLeftAddon={<DollarSignIcon size={18} />}
-          defaultValue={initialValues?.loan_amount} />
+          defaultValue={loan_amount} />
       </TextInputLabel>
 
       <TextInputLabel label="Fecha a conseguir el préstamo">
@@ -102,7 +104,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           required
           min={new Date().toISOString().substring(0,10)}
           fullWidth
-          defaultValue={initialValues?.loan_date} />
+          defaultValue={loan_date} />
       </TextInputLabel>
 
       <TextInputLabel label="Tiempo a devolver (años)">
@@ -116,7 +118,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           max={20}
           required
           fullWidth
-          defaultValue={initialValues?.loan_weeks} />
+          defaultValue={loan_weeks} />
       </TextInputLabel>
 
       <div className={checkboxMain}>
@@ -128,7 +130,7 @@ export function RequestLoanFormContent({ initialValues }: IRequestLoanFormConten
           disabled={isPending}
           fullWidth
           required
-          defaultChecked={initialValues?.check} />
+          defaultChecked={check} />
       </div>
     </div>
   )

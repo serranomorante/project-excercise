@@ -1,4 +1,5 @@
 import { RequestLoanForm, RequestLoanSuccessModalProvider } from "@/components/client";
+import { IRequestLoanFormFieldValues } from "@/components/client/loans/RequestLoanForm/RequestLoanForm.types";
 import { fetchUserDetail } from "@/core/user/user.actions";
 import { Box } from "@/design-system/layout";
 import { notFound } from "next/navigation";
@@ -15,7 +16,7 @@ export async function RequestLoanMainView({ userId }: IRequestLoanMainView) {
   return (
     <RequestLoanSuccessModalProvider>
       <Box container>
-        <RequestLoanForm initialState={data} />
+        <RequestLoanForm initialState={data as unknown as IRequestLoanFormFieldValues} />
       </Box>
     </RequestLoanSuccessModalProvider>
   )

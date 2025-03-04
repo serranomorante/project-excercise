@@ -9,27 +9,12 @@ import { useNotificationContext } from "@/components/client/info/NotificationCon
 import { Box } from '@/design-system/layout';
 import { Text } from '@/design-system/atoms';
 
-const DEFAULT_FORM_DATA: IRequestLoanFormFieldValues = {
-  age: null,
-  check: null,
-  email: null,
-  loan_amount: null,
-  loan_date: null,
-  id: null,
-  loan_weeks: null,
-  name: null,
-  phone: null,
-  surname: null
-}
-
 interface IRequestLoanFormProps {
   initialState: IRequestLoanFormFieldValues
 }
 
 export function RequestLoanForm({ initialState }: IRequestLoanFormProps) {
-  const initialFormState = { ...DEFAULT_FORM_DATA, ...initialState }
-
-  const [state, action, isPending] = React.useActionState(handleSubmit, initialFormState)
+  const [state, action, isPending] = React.useActionState(handleSubmit, initialState)
   const { notify } = useNotificationContext()
 
   return (

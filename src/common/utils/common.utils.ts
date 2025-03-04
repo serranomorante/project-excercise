@@ -19,5 +19,6 @@ export function adaptUnknownErrors<T>(response: Response): APIResponse<T> {
   if (hasProperty(response, "statusText")) {
     errorMessage += `: ${response.statusText}`
   }
+  // @ts-expect-error
   return { success: false, message: errorMessage, status: 500, code: 500 }
 }

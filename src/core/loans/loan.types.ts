@@ -18,4 +18,6 @@ export interface IRequestLoanArgs {
   ctx?: IRequestContext
 }
 
-export interface ILoanDetails extends IRequestLoanDto {}
+export interface ILoanDetails extends IRequestLoanDto {
+  id: number
+}

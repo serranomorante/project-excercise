@@ -1,5 +1,12 @@
 import { ComplexStyleRule, style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
+import { HTMLInputTypeAttribute } from "react";
+
+const textInputTypes = {
+  hidden: {
+    display: 'none'
+  }
+} satisfies Partial<Record<HTMLInputTypeAttribute, ComplexStyleRule>>
 
 const textInputSize = {
   xs: { fontSize: 12 },
@@ -29,6 +36,12 @@ export const textInputVariants = recipe({
         paddingLeft: 30
       },
       false: {}
+    },
+    InputRightAddon: {
+      true: {
+        paddingRight: 30
+      },
+      false: {}
     }
   },
   defaultVariants: {
@@ -36,13 +49,24 @@ export const textInputVariants = recipe({
   }
 })
 
-export const main = style({
-  display: 'flex',
-  position: 'relative',
+export const main = recipe({
+  base: {
+    display: 'flex',
+    position: 'relative',
+  },
+  variants: {
+    type: textInputTypes as Record<HTMLInputTypeAttribute, ComplexStyleRule>
+  }
 })
 
 export const inputLeftAddon = style({
   position: 'absolute',
   top: 11.2,
   left: 7
+})
+
+export const inputRightAddon = style({
+  position: 'absolute',
+  top: 11.2,
+  right: 7
 })

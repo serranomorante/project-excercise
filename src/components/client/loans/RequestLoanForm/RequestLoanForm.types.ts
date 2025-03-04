@@ -1,12 +1,12 @@
 export interface IRequestLoanFormFieldValues {
-  id: number | null
-  name: string | null
-  surname: string | null
-  email: string | null
-  phone: string | null
-  age: number | null
-  loan_amount: number | null
-  loan_date: string | null
-  loan_weeks: number | null
-  check: boolean | null
+  id: number
+  name: string
+  surname: string
+  email: string
+  phone: string
+  age: number
+  loan_amount: number
+  loan_date: string
+  loan_weeks: number
+  check: boolean
 }
