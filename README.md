@@ -9,6 +9,7 @@ Ejercicio de programación. Desarrollar un formulario para la solicitud de un pr
 - Performance gracias a los estilos precompilados (zero-runtime)
 - Aplica patrones de diseño como service/repository pattern
 - Gran parte de la ejecución ocurre en el lado del servidor y no en el navegador
+- Diseño responsive
 
 ## URLs de interés
 
@@ -95,3 +96,5 @@ Aspectos que intencionalmente fueron dejados de lado para apresurar el desarroll
 
 - Internacionalización
 - Login
+- Componentes de autocompletado como selectores o pickers
+- ESLint
