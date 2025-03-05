@@ -5,14 +5,13 @@ export const toastVariants = recipe({
     display: 'flex',
     alignItems: 'center',
     gap: 10,
-    position: 'absolute',
+    position: 'fixed',
     top: '5%',
     right: '5%',
     border: 'none',
     padding: '5px 30px',
     borderRadius: 10,
     boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.1);',
-    minWidth: 300
   },
   variants: {
     state: {
@@ -20,7 +19,6 @@ export const toastVariants = recipe({
       error: { backgroundColor: '#ff8e8e' },
       success: {
         backgroundColor: '#79df79',
-        top: '20%'
       },
       info: { backgroundColor: 'blue' },
     }
