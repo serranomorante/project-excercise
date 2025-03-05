@@ -2,6 +2,8 @@
 
 Ejercicio de programación. Desarrollar un formulario para la solicitud de un préstamo.
 
+> Estás viendo la versión **typescript** de este proyecto. En la rama [jsdoc](https://github.com/serranomorante/project-excercise/tree/jsdoc) tienes exactamente el mismo proyecto pero escrito en **javascript** sin haber perdido ninguno de los beneficios que ofrece typescript en cuanto al tipeado fuerte de tu código.
+
 ## Características principales
 
 - Dependencias mínimas: sólo `react`, `next.js` y `vanilla-extract`
