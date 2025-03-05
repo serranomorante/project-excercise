@@ -2,7 +2,8 @@
 
 Ejercicio de programación. Desarrollar un formulario para la solicitud de un préstamo.
 
-> Estás viendo la versión **typescript** de este proyecto. En la rama [jsdoc](https://github.com/serranomorante/project-excercise/tree/jsdoc) tienes exactamente el mismo proyecto pero escrito en **javascript** sin haber perdido ninguno de los beneficios que ofrece typescript en cuanto al tipeado fuerte de tu código.
+> Estás viendo la versión **jsdoc** del proyecto. Con esta versión intento demostrar que **no es necesario** escribir código en typescript para contar con un tipado fuerte en nuestro proyecto. Lo hemos conseguido usando javascript + comentarios de "jsdoc" sin añadir ninguna dependencia nueva.\
+> Al ejecutar `npm run dev` en ambas versiones ([typescript](https://github.com/serranomorante/project-excercise/tree/main) vs [jsdoc](https://github.com/serranomorante/project-excercise/tree/jsdoc)), la versión de jsdoc siempre fue más rápida `~1406ms` mientras que la versión en typescript llegó a tomar hasta `~1600ms`. Eliminar el step de compilación que typescript requiere, nos ahorra alrededor de 1s!! en un proyecto tan pequeño como este.
 
 ## Características principales
 
