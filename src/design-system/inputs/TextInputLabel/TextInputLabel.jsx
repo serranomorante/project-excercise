@@ -1,8 +1,11 @@
 import * as React from 'react'
-import { ITextInputLabelProps } from './TextInputLabel.types'
 import { labelTextMain, textInputLabelVariants } from './TextInputLabel.css'
 
-export function TextInputLabelBase(props: ITextInputLabelProps, ref: React.ForwardedRef<HTMLLabelElement>) {
+/**
+ * @param {import('./TextInputLabel.types').ITextInputLabelProps} props
+ * @param {import('react').ForwardedRef<HTMLLabelElement>} ref
+ */
+export function TextInputLabelBase(props, ref) {
   const { children, label, ...rest } = props
   return (
     <label ref={ref} className={textInputLabelVariants(rest)} {...rest}>

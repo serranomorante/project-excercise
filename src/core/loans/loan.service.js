@@ -1,8 +1,10 @@
 import { loanRepository } from "./loan.repository";
-import { IRequestLoanArgs } from "./loan.types";
 
 class LoanService {
-  public async requestLoan({ data, userId, ctx }: IRequestLoanArgs) {
+  /**
+   * @param {import("./loan.types").IRequestLoanArgs} args
+   */
+  async requestLoan({ data, userId, ctx }) {
     return loanRepository.requestLoan({ data, userId, ctx })
   }
 }

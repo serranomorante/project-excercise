@@ -1,13 +1,18 @@
-import { ComplexStyleRule } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
+/**
+ * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ */
 const buttonSize = {
   xs: { fontSize: 12, borderRadius: 18, height: 38, padding: '0px 22px' },
   sm: { fontSize: 14, borderRadius: 22, height: 42, padding: '0px 22px' },
   md: { fontSize: 16, borderRadius: 26, height: 46, padding: '0px 22px'  },
   lg: { fontSize: 18, borderRadius: 30, height: 50, padding: '0px 22px'  },
-} satisfies Record<string, ComplexStyleRule>
+}
 
+/**
+ * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ */
 const buttonColorSchema = {
   primary: {
     backgroundColor: 'black',
@@ -15,7 +20,7 @@ const buttonColorSchema = {
       '&:hover': { backgroundColor: '#3b3b3b' }
     }
   }
-} satisfies Record<string, ComplexStyleRule>
+}
 
 export const buttonVariants = recipe({
   base: {

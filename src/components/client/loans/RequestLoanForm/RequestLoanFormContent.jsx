@@ -2,18 +2,17 @@
 
 import { TextInput } from "@design-system/inputs";
 import { TextInputLabel } from "@design-system/inputs/TextInputLabel/TextInputLabel";
-import { IRequestLoanFormFieldValues } from "./RequestLoanForm.types";
 import { checkboxMain, main } from "./RequestLoanFormContent.css";
 import { useFormStatus } from 'react-dom'
 import { DollarSignIcon } from "../../common/DollarSignIcon";
 import { Text } from "@/design-system/atoms";
 import { TERMS_AND_CONDITIONS_URL } from "@/common";
 
-interface IRequestLoanFormContentProps {
-  initialValues?: Partial<IRequestLoanFormFieldValues>
-}
-
-export function RequestLoanFormContent({ initialValues = {} }: IRequestLoanFormContentProps) {
+/**
+ * @param {object} props
+ * @param {Partial<import("./RequestLoanForm.types").IRequestLoanFormFieldValues>} [props.initialValues]
+ */
+export function RequestLoanFormContent({ initialValues = {} }) {
   const { pending: isPending } = useFormStatus()
   const { id, name, surname, age, check, email, loan_amount, loan_date, loan_weeks, phone } = initialValues
 

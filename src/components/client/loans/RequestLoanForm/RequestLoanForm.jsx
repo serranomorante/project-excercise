@@ -4,16 +4,16 @@ import * as React from 'react'
 import { Button } from "@design-system/buttons";
 import { requestLoan } from "@/core/loans/loan.actions";
 import { RequestLoanFormContent } from "./RequestLoanFormContent";
-import { IRequestLoanFormFieldValues } from "./RequestLoanForm.types";
 import { useNotificationContext } from "@/components/client/info/NotificationContext";
 import { Box } from '@/design-system/layout';
 import { Text } from '@/design-system/atoms';
 
-interface IRequestLoanFormProps {
-  initialState: IRequestLoanFormFieldValues
-}
 
-export function RequestLoanForm({ initialState }: IRequestLoanFormProps) {
+/**
+ * @param {object} props
+ * @param {import('./RequestLoanForm.types').IRequestLoanFormFieldValues} props.initialState
+ */
+export function RequestLoanForm({ initialState }) {
   const [state, action, isPending] = React.useActionState(handleSubmit, initialState)
   const { notify } = useNotificationContext()
 
@@ -29,7 +29,11 @@ export function RequestLoanForm({ initialState }: IRequestLoanFormProps) {
     </Box>
   )
 
-  async function handleSubmit(_: Partial<IRequestLoanFormFieldValues>, formState: FormData) {
+  /**
+   * @param {Partial<import('./RequestLoanForm.types').IRequestLoanFormFieldValues>} _
+   * @param {FormData} formState
+   */
+  async function handleSubmit(_, formState) {
     if (!formState) throw new Error('Invalid form state')
 
     const response = await requestLoan(formState)

@@ -1,10 +1,10 @@
 import { NotificationProvider } from "@/components/client/info/NotificationContext"
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+/**
+ * @param {object} props
+ * @param {import('react').ReactNode} props.children
+ */
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>

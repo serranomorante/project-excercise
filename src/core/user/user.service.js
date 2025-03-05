@@ -1,8 +1,10 @@
 import { userRepository } from "./user.repository";
-import { IFetchUserDetailArgs } from "./user.types";
 
 class UserService {
-  public async fetchUserDetail({ userId, ctx }: IFetchUserDetailArgs) {
+  /**
+   * @param {import("./user.types").IFetchUserDetailArgs} args
+   */
+  async fetchUserDetail({ userId, ctx }) {
     return userRepository.fetchUserDetail({ userId, ctx })
   }
 }

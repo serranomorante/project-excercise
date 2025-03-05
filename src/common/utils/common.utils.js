@@ -1,5 +1,4 @@
 import { LOANS_SERVICE_KEY } from "@/common/configuration";
-import { APIResponse } from "../interfaces";
 
 export function getLoanServiceApiHeaders() {
   return {
@@ -7,14 +6,26 @@ export function getLoanServiceApiHeaders() {
   }
 }
 
-export function hasProperty<T extends object, K extends PropertyKey>(
-  obj: T,
-  key: K
-): obj is T & Record<K, unknown> {
+/**
+ * Returns true if the object has the passed property.
+ *
+ * @template {PropertyKey} TKey
+ * @template {Record<TKey, any>} T
+ *
+ * @param {T} obj
+ * @param {TKey} key
+ * @returns {key is keyof T}
+ */
+export function hasProperty(obj, key) {
   return key in obj
 }
 
-export function adaptUnknownErrors<T>(response: Response): APIResponse<T> {
+/**
+ * @template T
+ * @param {Response} response
+ * @returns {import("@/common").APIResponse<T>}
+ */
+export function adaptUnknownErrors(response) {
   let errorMessage = "Unhandled error"
   if (hasProperty(response, "statusText")) {
     errorMessage += `: ${response.statusText}`

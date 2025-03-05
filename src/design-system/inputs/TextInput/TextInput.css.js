@@ -1,19 +1,24 @@
-import { ComplexStyleRule, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
-import { HTMLInputTypeAttribute } from "react";
 
+/**
+ * @satisfies {Partial<Record<import("react").HTMLInputTypeAttribute, import('@vanilla-extract/css').ComplexStyleRule>>}
+ */
 const textInputTypes = {
   hidden: {
     display: 'none'
   }
-} satisfies Partial<Record<HTMLInputTypeAttribute, ComplexStyleRule>>
+}
 
+/**
+ * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ */
 const textInputSize = {
   xs: { fontSize: 12 },
   sm: { fontSize: 14, height: 25 },
   md: { fontSize: 16 },
   lg: { fontSize: 18 },
-} satisfies Record<string, ComplexStyleRule>
+}
 
 export const textInputVariants = recipe({
   base: {
@@ -63,7 +68,7 @@ export const main = recipe({
     position: 'relative',
   },
   variants: {
-    type: textInputTypes as Record<HTMLInputTypeAttribute, ComplexStyleRule>
+    type: /** @type {Record<import("react").HTMLInputTypeAttribute, import('@vanilla-extract/css').ComplexStyleRule>} */ (textInputTypes)
   }
 })
 

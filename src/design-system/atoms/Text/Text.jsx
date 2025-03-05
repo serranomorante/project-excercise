@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { ITextProps } from "./Text.types";
 import { textVariants } from './Text.css';
 
-function TextBase(props: ITextProps, ref: React.ForwardedRef<HTMLParagraphElement>) {
+/**
+ * @param {import('./Text.types').ITextProps} props
+ * @param {import('react').ForwardedRef<HTMLParagraphElement>} ref
+ */
+function TextBase(props, ref) {
   const { children, size, weight, ...rest } = props;
 
   return (

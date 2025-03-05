@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { IToastProps } from "./Toast.types"
 import { toastVariants } from './Toast.css'
 import { ErrorSignIcon } from '@/components/client/common'
 
@@ -10,7 +9,11 @@ const TYPE_TO_SIGN_MAP = {
   info: <span></span>,
 }
 
-function ToastBase(props: IToastProps, ref: React.ForwardedRef<HTMLDivElement>) {
+/**
+ * @param {import('./Toast.types').IToastProps} props
+ * @param {import('react').ForwardedRef<HTMLDivElement>} ref
+ */
+function ToastBase(props, ref) {
   const { children, state, type, ...rest } = props
 
   return (

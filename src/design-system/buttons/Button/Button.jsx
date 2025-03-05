@@ -1,8 +1,11 @@
 import * as React from 'react'
-import { IButtonProps } from './Button.types'
 import { buttonVariants } from './Button.css'
 
-function ButtonBase(props: IButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) {
+/**
+ * @param {import('./Button.types').IButtonProps} props
+ * @param {import('react').ForwardedRef<HTMLButtonElement>} ref
+ */
+function ButtonBase(props, ref) {
   const { children, size, fullWidth, colorSchema, disabled, ...rest } = props
 
   return (

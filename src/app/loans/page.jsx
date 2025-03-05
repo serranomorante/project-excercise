@@ -1,12 +1,11 @@
-import { TSearchParams } from "@/common";
 import { RequestLoanMainView } from "@/components/server/loans/RequestLoanMainView/RequestLoanMainView";
 import { notFound } from "next/navigation";
 
-interface IPageProps {
-  searchParams: TSearchParams
-}
-
-export default async function Page({ searchParams }: IPageProps) {
+/**
+ * @param {object} props
+ * @param {import("@/common").TSearchParams} props.searchParams
+ */
+export default async function Page({ searchParams }) {
   const { id } = await searchParams
 
   if (!id) notFound()

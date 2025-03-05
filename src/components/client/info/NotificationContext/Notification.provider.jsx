@@ -3,13 +3,18 @@
 import * as React from 'react'
 import { NotificationContext } from "./Notification.context";
 import { Toast } from '@/design-system/info';
-import { INotification, INotificationProviderProps } from './Notification.types';
 import { Text } from '@/design-system/atoms';
 
-export function NotificationProvider({ children }: INotificationProviderProps) {
-  const [messages, setMessages] = React.useState<INotification[]>([])
+/**
+ * @param {import('./Notification.types').INotificationProviderProps} props
+ */
+export function NotificationProvider({ children }) {
+  const [messages, setMessages] = React.useState(/** @type {import('./Notification.types').INotification[]} */ ([]))
 
-  function notify(notification: INotification) {
+  /**
+   * @param {import('./Notification.types').INotification} notification
+   */
+  function notify(notification) {
     if (messages.find(msg => msg.message === notification.message)) return
     setMessages(prev => [...prev, { message: notification.message, type: notification.type }])
     setTimeout(() => setMessages(prev => prev.slice(0, messages.length - 1)), 3000)
@@ -22,7 +27,11 @@ export function NotificationProvider({ children }: INotificationProviderProps) {
     </NotificationContext.Provider>
   )
 
-  function renderNotification({ message, type }: INotification, index: number) {
+  /**
+   * @param {import('./Notification.types').INotification} notification
+   * @param {number} index
+   */
+  function renderNotification({ message, type }, index) {
     return (
       <Toast key={`toast-${index}`} type={type} state={type}>
         <Text size='md'>{message}</Text>
