@@ -10,7 +10,7 @@ function TextInputBase(props: ITextInputProps, ref: React.ForwardedRef<HTMLInput
       <span className={inputLeftAddon}>{InputLeftAddon}</span>
       <input
         ref={ref}
-        className={textInputVariants({ size, InputLeftAddon: Boolean(InputLeftAddon), fullWidth })}
+        className={textInputVariants({ size, InputLeftAddon: !!InputLeftAddon, fullWidth, readOnly: rest.readOnly })}
         {...rest}
       />
       <span className={inputRightAddon}>{InputRightAddon}</span>

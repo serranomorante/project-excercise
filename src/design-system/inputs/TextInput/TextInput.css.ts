@@ -25,6 +25,14 @@ export const textInputVariants = recipe({
   },
   variants: {
     size: textInputSize,
+    readOnly: {
+      true: {
+        cursor: 'not-allowed',
+        pointerEvents: 'none',
+        backgroundColor: '#f0f0f0'
+      },
+      false: {}
+    },
     fullWidth: {
       true: {
         width: '100%'

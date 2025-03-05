@@ -25,6 +25,7 @@ export function RequestLoanFormContent({ initialValues = {} }: IRequestLoanFormC
           id="name"
           name="name"
           disabled={isPending}
+          readOnly
           fullWidth
           minLength={3}
           required
@@ -36,6 +37,7 @@ export function RequestLoanFormContent({ initialValues = {} }: IRequestLoanFormC
           id="surname"
           name="surname"
           disabled={isPending}
+          readOnly
           fullWidth
           required
           minLength={3}
@@ -47,6 +49,7 @@ export function RequestLoanFormContent({ initialValues = {} }: IRequestLoanFormC
           id="email"
           name="email"
           disabled={isPending}
+          readOnly
           fullWidth
           type="email"
           minLength={3}
