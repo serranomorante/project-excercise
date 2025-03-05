@@ -31,7 +31,8 @@ export const buttonVariants = recipe({
     colorSchema: buttonColorSchema,
     disabled: {
       true: {
-        cursor: 'not-allowed'
+        cursor: 'not-allowed',
+        pointerEvents: 'none'
       },
       false: {}
     },

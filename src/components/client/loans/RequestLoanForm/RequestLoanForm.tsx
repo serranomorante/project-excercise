@@ -29,7 +29,7 @@ export function RequestLoanForm({ initialState }: IRequestLoanFormProps) {
     </Box>
   )
 
-  async function handleSubmit(_: IRequestLoanFormFieldValues, formState: FormData) {
+  async function handleSubmit(_: Partial<IRequestLoanFormFieldValues>, formState: FormData) {
     if (!formState) throw new Error('Invalid form state')
 
     const response = await requestLoan(formState)
