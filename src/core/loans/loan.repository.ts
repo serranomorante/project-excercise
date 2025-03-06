@@ -10,7 +10,7 @@ class LoanRepository {
       return await response?.json()
         .then(json_response => {
           if (!hasProperty(json_response as APIResponse<ILoanDetails>, "data")) {
-            return { ...json_response, data }
+            return { ...json_response, data: { ...data, id: userId } }
           }
           return json_response
         })
