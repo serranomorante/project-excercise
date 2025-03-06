@@ -1,9 +1,12 @@
+/**
+ * @import { TSearchParams } from '@/common'
+ */
 import { RequestLoanMainView } from "@/components/server/loans/RequestLoanMainView/RequestLoanMainView";
 import { notFound } from "next/navigation";
 
 /**
  * @param {object} props
- * @param {import("@/common").TSearchParams} props.searchParams
+ * @param {TSearchParams} props.searchParams
  */
 export default async function Page({ searchParams }) {
   const { id } = await searchParams

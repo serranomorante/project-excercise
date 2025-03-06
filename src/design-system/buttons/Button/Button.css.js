@@ -1,7 +1,10 @@
+/**
+ * @import { ComplexStyleRule } from '@vanilla-extract/css'
+ */
 import { recipe } from '@vanilla-extract/recipes'
 
 /**
- * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ * @satisfies {Record<string, ComplexStyleRule>}
  */
 const buttonSize = {
   xs: { fontSize: 12, borderRadius: 18, height: 38, padding: '0px 22px' },
@@ -11,7 +14,7 @@ const buttonSize = {
 }
 
 /**
- * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ * @satisfies {Record<string, ComplexStyleRule>}
  */
 const buttonColorSchema = {
   primary: {

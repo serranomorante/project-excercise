@@ -1,3 +1,6 @@
+/**
+ * @import { APIResponse } from '@/common'
+ */
 import { LOANS_SERVICE_KEY } from "@/common/configuration";
 
 export function getLoanServiceApiHeaders() {
@@ -23,7 +26,7 @@ export function hasProperty(obj, key) {
 /**
  * @template T
  * @param {Response} response
- * @returns {import("@/common").APIResponse<T>}
+ * @returns {APIResponse<T>}
  */
 export function adaptUnknownErrors(response) {
   let errorMessage = "Unhandled error"

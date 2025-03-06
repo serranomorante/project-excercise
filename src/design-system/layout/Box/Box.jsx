@@ -1,9 +1,12 @@
+/**
+ * @import { IBoxProps } from './Box.types'
+ */
 import * as React from 'react';
 import { boxChild, boxVariants } from './Box.css';
 
 /**
- * @param {import('./Box.types').IBoxProps} props
- * @param {import('react').ForwardedRef<HTMLDivElement>} ref
+ * @param {IBoxProps} props
+ * @param {React.ForwardedRef<HTMLDivElement>} ref
  */
 function BoxBase(props, ref) {
   const { children, variant, container, ...rest } = props;

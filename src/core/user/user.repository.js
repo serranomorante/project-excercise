@@ -1,9 +1,13 @@
+/**
+ * @import { IFetchUserDetailArgs, IUserDetails } from './user.types'
+ * @import { APIResponse } from '@/common'
+ */
 import { LOANS_SERVICE_API, adaptUnknownErrors } from "@/common";
 
 class UserRepository {
   /**
-   * @param {import("./user.types").IFetchUserDetailArgs} args
-   * @returns {Promise<import("@/common").APIResponse<import("./user.types").IUserDetails>>}
+   * @param {IFetchUserDetailArgs} args
+   * @returns {Promise<APIResponse<IUserDetails>>}
    */
   async fetchUserDetail({ userId, ctx }) {
     const url = `${LOANS_SERVICE_API}/recruitment/fullstack/users?id=${userId}`

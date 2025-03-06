@@ -1,7 +1,10 @@
+/**
+ * @import { ComplexStyleRule } from '@vanilla-extract/css'
+ */
 import { recipe } from "@vanilla-extract/recipes";
 
 /**
- * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ * @satisfies {Record<string, ComplexStyleRule>}
  */
 const textSize = {
   xs: { fontSize: 12 },
@@ -12,7 +15,7 @@ const textSize = {
 }
 
 /**
- * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ * @satisfies {Record<string, ComplexStyleRule>}
  */
 const textWeight = {
   normal: {},

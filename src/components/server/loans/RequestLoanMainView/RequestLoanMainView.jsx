@@ -1,3 +1,6 @@
+/**
+ * @import { IRequestLoanFormFieldValues } from '@/components/client'
+ */
 import { RequestLoanForm } from "@/components/client";
 import { fetchUserDetail } from "@/core/user/user.actions";
 import { Box } from "@/design-system/layout";
@@ -14,7 +17,7 @@ export async function RequestLoanMainView({ userId }) {
 
   return (
     <Box container>
-      <RequestLoanForm initialState={/** @type {import("@/components/client").IRequestLoanFormFieldValues} */ (data)} />
+      <RequestLoanForm initialState={/** @type {IRequestLoanFormFieldValues} */ (data)} />
     </Box>
   )
 }

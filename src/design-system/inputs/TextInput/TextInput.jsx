@@ -1,9 +1,12 @@
+/**
+ * @import { ITextInputProps } from './TextInput.types'
+ */
 import * as React from 'react'
 import { inputLeftAddon, inputRightAddon, main, textInputVariants } from "./TextInput.css"
 
 /**
- * @param {import('./TextInput.types').ITextInputProps} props
- * @param {import('react').ForwardedRef<HTMLInputElement>} ref
+ * @param {ITextInputProps} props
+ * @param {React.ForwardedRef<HTMLInputElement>} ref
  */
 function TextInputBase(props, ref) {
   const { size, fullWidth, InputLeftAddon, InputRightAddon, ...rest } = props

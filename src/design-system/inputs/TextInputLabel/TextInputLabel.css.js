@@ -1,8 +1,11 @@
+/**
+ * @import { ComplexStyleRule } from '@vanilla-extract/css'
+ */
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
 /**
- * @satisfies {Record<string, import('@vanilla-extract/css').ComplexStyleRule>}
+ * @satisfies {Record<string, ComplexStyleRule>}
  */
 const textInputLabelVariantsSize = {
   xs: { fontSize: 12, },

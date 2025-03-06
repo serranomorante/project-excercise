@@ -1,18 +1,21 @@
 'use client'
 
+/**
+ * @import { INotificationProviderProps, INotification } from './Notification.types'
+ */
 import * as React from 'react'
 import { NotificationContext } from "./Notification.context";
 import { Toast } from '@/design-system/info';
 import { Text } from '@/design-system/atoms';
 
 /**
- * @param {import('./Notification.types').INotificationProviderProps} props
+ * @param {INotificationProviderProps} props
  */
 export function NotificationProvider({ children }) {
-  const [messages, setMessages] = React.useState(/** @type {import('./Notification.types').INotification[]} */ ([]))
+  const [messages, setMessages] = React.useState(/** @type {INotification[]} */ ([]))
 
   /**
-   * @param {import('./Notification.types').INotification} notification
+   * @param {INotification} notification
    */
   function notify(notification) {
     if (messages.find(msg => msg.message === notification.message)) return
@@ -28,7 +31,7 @@ export function NotificationProvider({ children }) {
   )
 
   /**
-   * @param {import('./Notification.types').INotification} notification
+   * @param {INotification} notification
    * @param {number} index
    */
   function renderNotification({ message, type }, index) {

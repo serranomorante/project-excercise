@@ -1,5 +1,8 @@
 'use server'
 
+/**
+ * @import { IRequestLoanDto } from './loan.types'
+ */
 import { loanService } from "./loan.service";
 import { getLoanServiceApiHeaders } from "@/common/utils/common.utils";
 
@@ -10,7 +13,7 @@ export async function requestLoan(formData) {
   const ctx = { headers: getLoanServiceApiHeaders() }
   const userId = Number(formData.get("id"))
 
-  /** @type {import("./loan.types").IRequestLoanDto} */
+  /** @type {IRequestLoanDto} */
   const data = {
     age: Number(formData.get("age")),
     check: Boolean(formData.get("check")),

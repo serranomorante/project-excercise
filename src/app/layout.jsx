@@ -2,7 +2,7 @@ import { NotificationProvider } from "@/components/client/info/NotificationConte
 
 /**
  * @param {object} props
- * @param {import('react').ReactNode} props.children
+ * @param {React.ReactNode} props.children
  */
 export default function RootLayout({ children }) {
   return (

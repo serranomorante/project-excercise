@@ -1,9 +1,13 @@
+/**
+ * @import { IRequestLoanArgs, ILoanDetails } from './loan.types'
+ * @import { APIResponse } from '@/common'
+ */
 import { LOANS_SERVICE_API, adaptUnknownErrors, hasProperty } from "@/common";
 
 class LoanRepository {
   /**
-   * @param {import("./loan.types").IRequestLoanArgs} args
-   * @returns {Promise<import("@/common").APIResponse<import("./loan.types").ILoanDetails>>}
+   * @param {IRequestLoanArgs} args
+   * @returns {Promise<APIResponse<ILoanDetails>>}
    */
   async requestLoan({ data, userId, ctx }) {
     const url = `${LOANS_SERVICE_API}/recruitment/fullstack/users/${userId}`

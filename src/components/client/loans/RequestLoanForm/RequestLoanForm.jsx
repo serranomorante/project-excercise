@@ -1,5 +1,8 @@
 'use client'
 
+/**
+ * @import { IRequestLoanFormFieldValues } from './RequestLoanForm.types'
+ */
 import * as React from 'react'
 import { Button } from "@design-system/buttons";
 import { requestLoan } from "@/core/loans/loan.actions";
@@ -11,7 +14,7 @@ import { Text } from '@/design-system/atoms';
 
 /**
  * @param {object} props
- * @param {import('./RequestLoanForm.types').IRequestLoanFormFieldValues} props.initialState
+ * @param {IRequestLoanFormFieldValues} props.initialState
  */
 export function RequestLoanForm({ initialState }) {
   const [state, action, isPending] = React.useActionState(handleSubmit, initialState)
@@ -30,7 +33,7 @@ export function RequestLoanForm({ initialState }) {
   )
 
   /**
-   * @param {Partial<import('./RequestLoanForm.types').IRequestLoanFormFieldValues>} _
+   * @param {Partial<IRequestLoanFormFieldValues>} _
    * @param {FormData} formState
    */
   async function handleSubmit(_, formState) {

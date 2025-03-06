@@ -1,10 +1,13 @@
 'use server'
 
+/**
+ * @import { IFetchUserDetailArgs } from './user.types'
+ */
 import { userService } from "./user.service";
 import { getLoanServiceApiHeaders } from "@/common/utils/common.utils";
 
 /**
- * @param {import("./user.types").IFetchUserDetailArgs} args
+ * @param {IFetchUserDetailArgs} args
  */
 export async function fetchUserDetail({ userId }) {
   const ctx = { headers: getLoanServiceApiHeaders() }

@@ -1,5 +1,8 @@
 'use client'
 
+/**
+ * @import { IRequestLoanFormFieldValues } from './RequestLoanForm.types'
+ */
 import { TextInput } from "@design-system/inputs";
 import { TextInputLabel } from "@design-system/inputs/TextInputLabel/TextInputLabel";
 import { checkboxMain, main } from "./RequestLoanFormContent.css";
@@ -10,7 +13,7 @@ import { TERMS_AND_CONDITIONS_URL } from "@/common";
 
 /**
  * @param {object} props
- * @param {Partial<import("./RequestLoanForm.types").IRequestLoanFormFieldValues>} [props.initialValues]
+ * @param {Partial<IRequestLoanFormFieldValues>} [props.initialValues]
  */
 export function RequestLoanFormContent({ initialValues = {} }) {
   const { pending: isPending } = useFormStatus()
